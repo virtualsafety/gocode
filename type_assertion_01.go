@@ -1,5 +1,7 @@
 //https://yourbasic.org/golang/type-assertion-switch/
 //https://golang.org/ref/spec#Type_assertions
+//https://flaviocopes.com/go-empty-interface/
+//https://yourbasic.org/golang/interfaces-explained/
 
 package main
 import ( 
