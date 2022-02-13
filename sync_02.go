@@ -1,3 +1,5 @@
+package main
+
 //https://yourbasic.org/golang/mutex-explained/
 //https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
 //https://gobyexample.com/mutexes
@@ -5,8 +7,7 @@
 
 import (
   "fmt"
-  "sync" 
-  "time"
+  "sync"  
 )
 
 type Container struct {
@@ -27,21 +28,19 @@ func main() {
 
   var wg sync.WaitGroup
   doIncrement := func(name string, n int) {
-	wg.Add(1)
-
     for i := 0; i < n; i++ {
       c.inc(name)
     }
 	wg.Done()
   }
 
+  wg.Add(4)
   go doIncrement("a", 100000)
   go doIncrement("a", 100000)
   go doIncrement("b", 100000)
   go doIncrement("b", 100000)
-
+ 
   // Wait a bit for the goroutines to finish
-  wg.Wait()
-  time.Sleep(300 * time.Millisecond)
+  wg.Wait()  
   fmt.Println(c.counters)
 }
