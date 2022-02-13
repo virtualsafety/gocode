@@ -1,9 +1,12 @@
 package main
 
+//https://go101.org/article/concurrent-synchronization-overview.html
+//https://go101.org/article/concurrent-synchronization-more.html
 //https://yourbasic.org/golang/mutex-explained/
 //https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
 //https://gobyexample.com/mutexes
 //https://gobyexample.com/waitgroups
+
 
 import (
   "fmt"
