@@ -1,5 +1,3 @@
-package main
-
 //https://yourbasic.org/golang/mutex-explained/
 //https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
 //https://gobyexample.com/mutexes
@@ -8,6 +6,7 @@ package main
 import (
   "fmt"
   "sync" 
+  "time"
 )
 
 type Container struct {
@@ -43,5 +42,6 @@ func main() {
 
   // Wait a bit for the goroutines to finish
   wg.Wait()
+  time.Sleep(300 * time.Millisecond)
   fmt.Println(c.counters)
 }
